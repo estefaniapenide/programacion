@@ -1,0 +1,15 @@
+Creación de un .jar con MAVEN:
+
+https://www.youtube.com/watch?v=Yv1mUcRvnNA
+
+Creación de un EXE a partir de un JAR
+https://danielme.com/2015/05/13/maven-aplicaciones-ejecutables/
+
+Para poder ejecutar un exe en un pc sin java, hay que copiar el jre en la carpeta donde estará el ejecutable
+y el <jre></jre> del pom será de la siguiente manera:
+<jre>
+    <!--En este caso el jre se ha metido en la misma carpeta ráiz donde se generará el ejecutable .exe-->
+    <path>jre</path>
+    <!-- versión mínima requerida de java -->
+    <minVersion>1.8.0</minVersion>
+</jre>

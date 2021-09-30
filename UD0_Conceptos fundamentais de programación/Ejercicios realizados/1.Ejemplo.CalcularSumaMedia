@@ -1,0 +1,24 @@
+Proceso CalcularSumaMedia
+	Definir num Como Entero;
+	Definir suma, cont Como Entero;
+	Definir media Como Real;
+	suma=0;
+	cont=0;
+	Repetir
+		Escribir "Número (0 para salir):";
+		Leer num;
+		suma=suma+num;
+		//Si num=0 non o temos que ter en conta para a media//
+		Si num<>0 Entonces
+			cont=cont+1;
+		FinSi
+	Hasta Que num=0;
+	//Si cont=0 non se pode dividir, daría un erro//
+	Si cont<>0 Entonces
+		media=suma/cont;
+	SiNo
+		media=0;
+	FinSi
+	Escribir "Suma: ", suma;
+	Escribir "Media: ", media;
+FinProceso

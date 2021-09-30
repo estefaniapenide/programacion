@@ -1,0 +1,33 @@
+boolean correcto;
+Scanner miScanner = new Scanner(System.in);
+do {
+    correcto=true;
+    //Se pide un número entero
+    System.out.println("Introduce un número entero ");
+    try {
+        int elNumero = miScanner.nextInt();
+        System.out.println("Has introducido el número " + elNumero);
+    } catch (InputMismatchException e) {
+        //Tratar la excepción
+        System.out.println("No has introducido un número válido");
+        miScanner.next();
+        correcto = false;
+    }
+} while (!correcto);
+// Al final y por buenas prácticas cerramos el escaner
+miScanner.close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"gal.teis.proyecto2","l":"Libreria"},{"p":"gal.teis.proyecto2","l":"Principal"}];updateSearchResults();

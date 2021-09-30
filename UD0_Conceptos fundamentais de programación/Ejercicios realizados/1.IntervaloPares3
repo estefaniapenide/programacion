@@ -1,0 +1,38 @@
+Proceso ParImpar
+	//Definir datos//
+	//Pedir datos//
+	//Cálculos//
+	//Mostrar en pantalla el resultado//
+	Definir num1,num2 Como Entero;
+	Escribir "A continuación te pediremos los extremos de un intervalo para devolverte la lista de números pares dentro del mismo.";
+	Escribir Sin Saltar "Introduce un extremo (número entero): ";
+	Leer num3;
+	Escribir Sin Saltar "Introduce otro extremo (número entero): ";
+	Leer num4;
+	Si num3<num4 Entonces
+		num1=num3;
+		num2=num4;
+		Escribir Sin Saltar "Estos son los números pares del intervalo [", num1, ", ", num2,"]: ";
+	SiNo
+		Si num3>num4 Entonces
+		  num2=num3;
+		  num1=num4;
+		  Escribir Sin Saltar  "Estos son los números pares del intervalo [", num1, ", ", num2,"]: ";
+	  SiNo
+		  Si num3=num4 y num3%2=0 Entonces
+			  Escribir "No se trata de ningún intervalo pero el propio número ", num3, " introducido es par.";
+		  SiNo
+			  Escribir "No se trata de ningún intervalo y el número introducido no es par.";
+		  FinSi
+		FinSi
+	FinSi
+	Mientras num1<=num2 Hacer
+			Si num1%2=0 Entonces
+				Escribir Sin Saltar num1, " ";
+			SiNo
+				num1=num1+1;
+				Escribir Sin Saltar num1, " ";
+			FinSi
+			num1=num1+2;
+	FinMientras
+FinProceso

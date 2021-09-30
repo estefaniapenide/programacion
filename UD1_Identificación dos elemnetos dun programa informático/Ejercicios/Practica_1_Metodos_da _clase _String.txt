@@ -1,0 +1,100 @@
+ static void metodos(){
+
+ String cadena = "No por mucho madrugar amanece más temprano";
+ 
+ 
+ System.out.println(cadena.charAt(0));
+//Devuelve el carácter indicado por parámetro.
+//Tipo de parámetro de entrada: int
+//Tipo de parámetro de salida: char
+//Por lo tanto:
+//Devuelve el primer elemento de la cadena, ya que se empieza a contar
+// en el cero. En este caso será 'N'.
+ 
+ 
+ System.out.println(cadena.charAt(9));
+ //Devuelve el carácter indicado por parámetro.
+ //Tipo de parámetro de entrada: int
+ //Tipo de parámetro de salida: char
+ //Por lo tanto:
+ //Devuleve el octavo elemento de la cadena (porque empezamos en cero, por lo tanto
+ //hay que restarle 1).En este caso será 'c'.
+
+ 
+ System.out.println(cadena.endsWith("o"));
+ //Indica si la cadena acaba con el String pasado por parámetro.
+ //Tipo de parámetro de entrada: String
+ //Tipo de parámetro de salida: boolean
+ //Por lo tanto:
+ //Devolverá 'true' o 'false' en función de si el último elemento de la cadena es el
+ //especificado o no. Hay que tener en cuenta que hace diferencia entre mayúsculas
+ //y minúsculas. En este caso será 'true'.
+ 
+ 
+ System.out.println(cadena.startsWith("n"));
+ //Indica si la cadena termina con el String pasado por parámetro.
+ //Tipo de parámetro de entrada: String
+ //Tipo de parámetro de salida: boolean
+ //Por lo tanto:
+ //Devolverá 'true' o 'false' en función de si el primer elemento de la cadena es el
+ //especificado o no. En este caso será 'false' porque a pesar de ser la letra indicada
+ // hace difrencia entre mayúsculas y minúsculas.
+
+ 
+ System.out.println(cadena.equals("No por mucho madrugar amanece más temprano"));
+ //Indica si una cadena es igual que otra.
+ //Tipo de parámetro de entrada: String
+ //Tipo de parámetro de salida: boolean
+ //Por lo tanto:
+ //Devolverá 'true' o 'false' en función de si la cadena es igual al nuevo String  indicado o no.
+ //En este caso será 'true'.
+
+ 
+ System.out.println(cadena.indexOf("mucho"));
+ //Devuelve la posición, mediante un número entero, de una cadena o un carácter 
+ //dentro de una cadena de texto nada. En el caso de que el 
+ //carácter o la cadena no exista se devuelve un -1. 
+ //Tipo de parámetro de entrada: String
+ //Tipo de parámetro de salida: int
+ //Por lo tanto:    
+ //Delvolverá el la posición donde empieza cadena indicada. Hay que tener en cuenta
+ // que a la primera posición se le asigna cero. En este caso 'mucho' la posicioón 
+ //del primer caracter de mucho es 7.
+ 
+
+ System.out.println(cadena.length());
+ //Devuelve la longitud de la cadena.
+ //Tipo de parámetro de entrada: ninguno
+ //Tipo de parámetro de salida: int
+ //Por lo tanto:
+ //Devolverá el número de caracteres que ocupa la cadena. En este caso será 42.
+
+ 
+ System.out.println(cadena.replace('o','i'));
+ //Devuelve un String cambiando los caracteres que nosotros le indiquemos.
+ //Tipos de parámetros de entrada: char (carácter que existe en el String), char (por el que queremos cambiar)
+ //Tipo de parámetro de salida: String
+ //Por lo tanto:
+ //Devolverá la misma cadena modificada. Todos los caracteres igual al primero indicado
+ //ahora serán sustituidos por el segundo indicado. En este caso se reemplazarán todas las
+ //'o' por 'i', así tendremos 'Ni pir muchi madrugar amanece más temprani'.
+
+ 
+ System.out.println(cadena.toLowerCase());
+ //Convierte el String a minúsculas.
+ //Tipo de parámetro de entrada: ninguno
+ //Tipo de parámetro de salida: String
+ //Po lo tanto:
+ //Devolverá todos los elementos de la cadena indica en minúsculas. En este caso
+ //será 'no por mucho madrugar amanece más temprano'.
+
+ 
+ System.out.println(cadena.toUpperCase());
+ //Convierte el String a mayúsculas.
+ //Tipo de parámetro de entrada: ninguno
+ //Tipo de parámetro de salida: String
+ //Po lo tanto:
+ //Devolverá todos los elementos de la cadena indica en mayúsculas. En este caso
+ //será 'NO POR MUCHO MADRUGAR AMANECE MÁS TEMPRANO'.
+ 
+ }

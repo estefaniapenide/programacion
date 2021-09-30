@@ -1,0 +1,10 @@
+gal\teis\excepciones_controldata\ErrorFormatoCodigoException.class
+gal\teis\vacunas\Vacuna.class
+gal\teis\vacunas\Aplicacion.class
+gal\teis\vacunas\IAutorizable.class
+gal\teis\excepciones_controldata\ControlData.class
+gal\teis\excepciones_controldata\VacunasIgualesException.class
+gal\teis\excepciones_controldata\FaseAnteriorNoSuperadaException.class
+gal\teis\excepciones_controldata\VacunaYaEvaluadaException.class
+gal\teis\vacunas\VacAlmacen.class
+gal\teis\vacunas\VacunaAutorizacion.class

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>gal.teis</groupId>
+    <artifactId>Pacha</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <transformers>
+                        <transformer
+                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>gal.teis.pacha.PachaEditor</mainClass>
+                        </transformer>
+                    </transformers>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                                <exclude>META-INF/*.EC</exclude> 
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.25</version>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+ 
+                            <!--indicar gui (javaw) o console (java) -->
+                            <headerType>gui</headerType>
+                            <outfile>app.exe</outfile>
+ 
+                            <!--<classPath>
+                            <mainClass>com.danielme.blog.maven.HelloWorldSwing</mainClass>-->
+                            <!-- la ruta absoluta en la que tendremos las dependencias -->
+                            <!-- %EXEDIR% es la variable que indica el directorio en el que
+                            se está ejectando el .exe -->
+                            <!--<jarLocation>%EXEDIR%/lib/</jarLocation>
+                            </classPath>-->
+                            <!-- icono del ejecutable -->
+                            <icon>Images/Icono.ico</icon>
+                            <!-- impide ejecutar más de una instancia a la vez -->
+                            <singleInstance>
+                                <mutexName>myApp</mutexName>
+                            </singleInstance>
+ 
+                            <jre>
+                                <!--En este caso el jre se ha metido en la misma carpeta ráiz donde se generará el jecutable .exe-->
+                                <path>jre</path>
+                                <!-- versión mínima requerida de java -->
+                                <minVersion>1.8.0</minVersion>
+                            </jre>
+                         
+                            <versionInfo>
+                                <fileVersion>1.0.0.0</fileVersion>
+                                <txtFileVersion>versión 1.0</txtFileVersion>
+                                <fileDescription>demo de launch4j</fileDescription>
+                                <copyright>danielme.com</copyright>
+                                <productVersion>1.0.0.0</productVersion>
+                                <txtProductVersion>demo de launch4j</txtProductVersion>
+                                <productName>demo de launch4j</productName>                             
+                                <internalName>app</internalName>
+                                <originalFilename>app.exe</originalFilename>
+                            </versionInfo>
+ 
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

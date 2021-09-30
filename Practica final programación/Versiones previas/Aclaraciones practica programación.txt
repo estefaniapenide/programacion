@@ -1,0 +1,94 @@
+Nombre proyecto: PracticaVacuna_EstefaniaPenide
+
+Contrlamos si se pasa a la siguiente fase o no con fasesCompletadas
+
+Leer el resultado de la investigacion de la ultima fase que se ha implementado -> devolver un string indicando cual es(o alguna descripción  ene ese sentido)
+
+Se puede poner mas de un constructor de vacunas(lo organizamos nosotros como queremos)
+
+Clase VacAlmacen(es la misma que OpVacunas) usamos alguna collection para gestionarlas(para almacenar elementos y hacer operaciones sobre los elementos)
+
+
+Clase Aplicación -> Buscar vacuna con el código (por ejemplo)(quizá puedo ponerlo de forma que salga un menú con todas las opciones por las que buscarla:
+1.codigo
+2.nombre
+3.principio activo
+4.farmaceutica
+5.precio recomendado
+)
+
+
+mirar bien la estructura:
+No sé que opcion poner
+a) Vacuna extends VacunaAutorización
+b) VacunaAutorizacion implements IAutorizacion extends Vacuna
+
+VacVacunas lo hago con composición y no hereda ni implementa de nada???
+
+
+public String ultimaFaseImplementada() {
+        String implementacion = "";
+        if (fasesCompletadas == 0) {
+            implementacion = "No se ha implementado ninguna fase";
+        } else if (fasesCompletadas == 1) {
+            if (!fase1Superada) {
+                implementacion = "Última fase implenetada = Fase 1\n"
+                        + "Resultado: No superada";
+            } else if(fase1Superada){
+                implementacion="Última fase implenetada = Fase 1\n"
+                        +"Resultado: Superada";
+            }
+        }else if(fasesCompletadas==2){
+            if (!fase2Superada) {
+                implementacion = "Última fase implenetada = Fase 2\n"
+                        + "Resultado: No superada";
+            } else if(fase2Superada){
+                implementacion="Última fase implenetada = Fase 2\n"
+                        +"Resultado: Superada";
+            }
+        }else if(fasesCompletadas==3){
+            if (!fase3Superada) {
+                implementacion = "Última fase implenetada = Fase 3\n"
+                        + "Resultado: No superada";
+            } else if(fase3Superada){
+                implementacion="Última fase implenetada = Fase 3\n"
+                        +"Resultado: Superada";
+            }
+        }
+        return implementacion;
+    }
+
+
+ public void setCodigo(String codigo) {
+        Pattern pat = Pattern.compile("^V[AEIOU]([a-z]{3,4})(([4-7]{2})|8)");
+        Matcher mat = pat.matcher(codigo);
+        try {
+            if (!mat.matches()) {
+                throw new ErrorFormatoCodigoException(codigo);
+            } else {
+                this.codigo = codigo;
+            }
+        } catch (ErrorFormatoCodigoException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+ public Vacuna(String codigo, String nombre) {
+        //Si se introduce un código que no se ajusta al formato requerido, 
+        //la vacuna se crea igualmente, pero el  atributo "codigo" queda como un String vacío.
+        Pattern pat = Pattern.compile("^V[AEIOU]([a-z]{3,4})(([4-7]{2})|8)");
+        Matcher mat = pat.matcher(codigo);
+        try {
+            if (!mat.matches()) {
+                throw new ErrorFormatoCodigoException(codigo);
+            } else {
+                this.codigo = codigo;
+            }
+        } catch (ErrorFormatoCodigoException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            this.nombre=nombre;
+        }
+
+    }
